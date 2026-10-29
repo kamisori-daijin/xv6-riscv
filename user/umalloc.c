@@ -49,8 +49,8 @@ morecore(uint nu)
   char *p;
   Header *hp;
 
-  if (nu < 4096)
-    nu = 4096;
+  if(nu < 256)
+    nu = 256;
   p = sbrk(nu * sizeof(Header));
   if (p == SBRK_ERROR)
     return 0;
